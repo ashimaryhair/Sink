@@ -1,7 +1,9 @@
 export default defineNuxtRouteMiddleware(async (to) => {
   if (import.meta.server)
     return
-
+  if (to.path === '/') {
+    return navigateTo('/dashboard')
+  }
   if (to.path.startsWith('/dashboard') && to.path !== '/dashboard/login') {
     if (!window.localStorage.getItem('SinkSiteToken'))
       return navigateTo('/dashboard/login')

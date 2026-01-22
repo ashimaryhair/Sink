@@ -6,6 +6,5 @@
     <HomeStats />
     <HomeTestimonials />
     <HomeCta />
-    444
   </div>
 </template>
