@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import { Menu, Star, X } from 'lucide-vue-next'
-import { GitHubIcon, TelegramIcon, XIcon } from 'vue3-simple-icons'
+import { Menu, X } from 'lucide-vue-next'
 
 const showMenu = ref(false)
-const { title, telegram, twitter, github } = useAppConfig()
-const { stats } = useGithubStats()
+const { title } = useAppConfig()
+// const { stats } = useGithubStats()
 </script>
 
 <template>
@@ -34,16 +33,7 @@ const { stats } = useGithubStats()
                 aria-label="home"
                 class="flex items-center space-x-2"
               >
-                <span
-                  class="flex size-8 items-center justify-center rounded-full"
-                >
-                  <img
-                    src="/sink.png"
-                    :alt="`${title} Logo`"
-                    class="size-full rounded-full"
-                  >
-                </span>
-                <span class="text-xl font-black">{{ title }}</span>
+                ashimaryhair 短链
               </NuxtLink>
 
               <button
@@ -92,23 +82,6 @@ const { stats } = useGithubStats()
                   md:w-fit
                 "
               >
-                <Button
-                  as-child
-                  variant="outline"
-                  size="sm"
-                >
-                  <a
-                    :href="github"
-                    target="_blank"
-                    :title="$t('layouts.footer.social.github')"
-                    class="flex items-center gap-1.5"
-                  >
-                    <GitHubIcon class="size-4" />
-                    <Star class="size-3" />
-                    <span class="tabular-nums">{{ stats.stars }}</span>
-                  </a>
-                </Button>
-
                 <SwitchLanguage />
                 <SwitchTheme />
               </div>
@@ -124,7 +97,7 @@ const { stats } = useGithubStats()
     </main>
 
     <!-- Footer -->
-    <footer class="border-t bg-background py-8">
+    <!-- <footer class="border-t bg-background py-8">
       <div class="mx-auto max-w-6xl px-6">
         <div
           class="
@@ -217,6 +190,6 @@ const { stats } = useGithubStats()
           </div>
         </div>
       </div>
-    </footer>
+    </footer> -->
   </div>
 </template>
